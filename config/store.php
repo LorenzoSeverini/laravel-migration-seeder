@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'someLinks' => [
+
+    'links' => [
         [
             "href" => "/",
             "text" => "Home Page",
@@ -15,5 +16,5 @@ return [
             "text" => "Documentation",
         ]
     ],
-    'someOtherData' => [ 42, 37, 73],
+
 ];
