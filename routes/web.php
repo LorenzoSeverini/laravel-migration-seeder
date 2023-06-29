@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Guest\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $links = config('store.someLinks');
-    return view('welcome', compact('links'));
-});
+Route::get('/', [PageController::class, 'index'])->name('homePage');
 
-Route::get('/otherpage', function () {
-    $links = config('store.someLinks');
-    return view('other', compact('links'));
-});
+Route::get('/treniAttuali', [PageController::class, 'treniAttuali'])->name('treniAttuali');
