@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Train;
+use Carbon\Carbon;
 
 class TrainsTableSeeder extends Seeder
 {
@@ -14,6 +15,9 @@ class TrainsTableSeeder extends Seeder
      */
     public function run()
     {
+
+        $currentDate = Carbon::now()->toDateString();
+
         Train::firstOrCreate([
             'azienda' => 'Azienda 1',
             'stazione_partenza' => 'Stazione A',
@@ -24,6 +28,7 @@ class TrainsTableSeeder extends Seeder
             'numero_carrozze' => 5,
             'in_orario' => true,
             'cancellato' => false,
+            'data' => $currentDate,
         ]);
 
         Train::firstOrCreate([
@@ -36,6 +41,7 @@ class TrainsTableSeeder extends Seeder
             'numero_carrozze' => 3,
             'in_orario' => true,
             'cancellato' => false,
+            'data' => $currentDate,
         ]);
 
         Train::firstOrCreate([
@@ -48,6 +54,7 @@ class TrainsTableSeeder extends Seeder
             'numero_carrozze' => 7,
             'in_orario' => true,
             'cancellato' => false,
+            'data' => $currentDate,
         ]);
 
         Train::firstOrCreate([
@@ -60,6 +67,7 @@ class TrainsTableSeeder extends Seeder
             'numero_carrozze' => 2,
             'in_orario' => true,
             'cancellato' => false,
+            'data' => $currentDate,
         ]);
     }
 };
