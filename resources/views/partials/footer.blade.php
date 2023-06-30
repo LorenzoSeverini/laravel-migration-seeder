@@ -15,7 +15,7 @@
             <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
         <div class="text-center">
-            <p>&copy; {{ date('Y') }} Movies App. All rights reserved.</p>
+            <p>&copy; {{ date('Y') }} Trains App. All rights reserved.</p>
         </div>
     </div>
 
