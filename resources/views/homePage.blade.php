@@ -30,6 +30,7 @@
                             <p>Numero Carrozze: {{ $train->numero_carrozze }}</p>
                             <p>In orario: {{ $train->in_orario ? 'Sì' : 'No' }}</p>
                             <p>Cancellato: {{ $train->cancellato ? 'Sì' : 'No' }}</p>
+                            <p>Data: {{ \Carbon\Carbon::parse($train->data)->format('d/m/Y') }}</p>
                         </div>
                     </div>
                 </div>
