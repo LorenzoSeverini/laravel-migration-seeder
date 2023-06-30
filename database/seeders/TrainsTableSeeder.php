@@ -62,4 +62,4 @@ class TrainsTableSeeder extends Seeder
             'cancellato' => false,
         ]);
     }
-}
+};
