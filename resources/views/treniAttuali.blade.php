@@ -20,8 +20,25 @@
                             <p>Orario di partenza: {{ $train->orario_partenza }}</p>
                             <p>Orario di arrivo: {{ $train->orario_arrivo }}</p>
                             <p>Numero Carrozze: {{ $train->numero_carrozze }}</p>
-                            <p>In orario: {{ $train->in_orario ? 'Sì' : 'No' }}</p>
-                            <p>Cancellato: {{ $train->cancellato ? 'Sì' : 'No' }}</p>
+                            @if ($train->in_orario)
+                                <div class="alert alert-success">
+                                    Questo treno è in orario!
+                                </div>
+                            @else
+                                <div class="alert alert-warning">
+                                    Questo treno è in ritardo!
+                                </div>
+                            @endif
+
+                            @if ($train->cancellato)
+                                <div class="alert alert-danger">
+                                    Questo treno è stato cancellato!
+                                </div>
+                            @else
+                                <div class="alert alert-success">
+                                    Questo treno non è stato cancellato!
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
