@@ -21,6 +21,7 @@
                     <div class="card-body">
                         <div class="card-title">
                             <h3>{{ $train->codice_treno }}</h3>
+                            <p>Data: {{ \Carbon\Carbon::parse($train->data)->format('d/m/Y') }}</p>
                         </div>
                         <div class="card-text">
                             <p>Stazione di partenza: {{ $train->stazione_partenza }}</p>
@@ -29,8 +30,21 @@
                             <p>Orario di arrivo: {{ $train->orario_arrivo }}</p>
                             <p>Numero Carrozze: {{ $train->numero_carrozze }}</p>
                             <p>In orario: {{ $train->in_orario ? 'Sì' : 'No' }}</p>
+                            @if ($train->in_orario)
+                                <div class="alert alert-success">
+                                    This train is on time!
+                                </div>
+                            @else
+                                <div class="alert alert-warning">
+                                    This train is late!
+                                </div>
+                            @endif
                             <p>Cancellato: {{ $train->cancellato ? 'Sì' : 'No' }}</p>
-                            <p>Data: {{ \Carbon\Carbon::parse($train->data)->format('d/m/Y') }}</p>
+                            @if ($train->cancellato)
+                                <div class="alert alert-danger">
+                                    This train has been canceled!
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
